@@ -43,27 +43,42 @@ UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 def create_admin():
     db = next(get_db())
     try:
-        user = db.query(User).filter(User.username == "admin").first()
-        if not user:
-            db.add(
-                User(
-                    username="admin",
-                    password_hash=hash_password("123456"),
-                    role="super_admin",
-                    company_name="ADMIN",
-                    display_name="ADMIN",
-                    is_active=True,
-                    can_send_analysis=True,
-                    can_send_signal=True,
-                    can_send_news=True,
-                    can_send_data_calendar=True,
-                    subscription_plan="lifetime",
-                )
-            )
+        admin = db.query(User).filter(User.username == "admin").first()
+
+        if admin:
+            admin.password_hash = hash_password("280980Evr.")
+            admin.role = "super_admin"
+            admin.company_name = admin.company_name or "ADMIN"
+            admin.display_name = admin.display_name or "ADMIN"
+            admin.is_active = True
+            admin.can_send_analysis = True
+            admin.can_send_signal = True
+            admin.can_send_news = True
+            admin.can_send_data_calendar = True
+            admin.subscription_plan = "lifetime"
             db.commit()
+            print("Admin şifresi güncellendi")
+            return
+
+        db.add(
+            User(
+                username="admin",
+                password_hash=hash_password("280980Evr."),
+                role="super_admin",
+                company_name="ADMIN",
+                display_name="ADMIN",
+                is_active=True,
+                can_send_analysis=True,
+                can_send_signal=True,
+                can_send_news=True,
+                can_send_data_calendar=True,
+                subscription_plan="lifetime",
+            )
+        )
+        db.commit()
+        print("Admin oluşturuldu")
     finally:
         db.close()
-
 
 def get_current_user(request: Request, db: Session):
     user_id = request.session.get("user_id")
