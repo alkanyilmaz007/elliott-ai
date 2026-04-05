@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elliott AI | GiriÅŸ</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="auth-body">
+    <div class="auth-bg"></div>
+    <div class="auth-wrapper">
+        <div class="auth-left">
+            <div class="brand-badge">AI SIGNAL ENGINE</div>
+            <h1>Elliott AI Platform</h1>
+            <p class="auth-subtitle">
+                Grafik yÃ¼kle, anlÄ±k fiyatÄ± gir, yorum ve sinyalini saniyeler iÃ§inde Ã¼ret.
+            </p>
+            <div class="feature-list">
+                <div class="feature-card"><span>âš¡</span><div><h3>HÄ±zlÄ± Analiz</h3><p>GÃ¶rsel tabanlÄ± yorum ve sinyal Ã¼retimi</p></div></div>
+                <div class="feature-card"><span>ğŸ§ </span><div><h3>AI Destekli</h3><p>Kurala dayalÄ± yorum + geliÅŸmiÅŸ Ã§Ä±ktÄ± yapÄ±sÄ±</p></div></div>
+                <div class="feature-card"><span>ğŸ”</span><div><h3>Ãœyeye Ã–zel Alan</h3><p>Her kullanÄ±cÄ± yalnÄ±zca kendi verisini gÃ¶rÃ¼r</p></div></div>
+            </div>
+        </div>
+
+        <div class="auth-right">
+            <div class="auth-card">
+                <div class="logo-circle">EA</div>
+                <h2>Panele GiriÅŸ Yap</h2>
+                <p class="muted center">Yetkili hesap bilgilerin ile devam et</p>
+
+                {% if error %}
+                    <div class="alert error">{{ error }}</div>
+                {% endif %}
+
+                <form method="post" action="/login" class="auth-form">
+                    <label>KullanÄ±cÄ± AdÄ±</label>
+                    <input type="text" name="username" placeholder="KullanÄ±cÄ± adÄ±n" required>
+
+                    <label>Åifre</label>
+                    <input type="password" name="password" placeholder="Åifren" required>
+
+                    <button type="submit" class="btn btn-primary">GiriÅŸ Yap</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

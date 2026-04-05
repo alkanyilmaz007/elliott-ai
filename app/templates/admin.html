@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elliott AI | Admin</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="panel-body">
+    <div class="panel-layout">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="logo-circle small">EA</div>
+                <div>
+                    <h2>Elliott AI</h2>
+                    <span>Signal Platform</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a class="nav-item" href="/dashboard">Dashboard</a>
+                <a class="nav-item" href="/history">GeÃ§miÅŸ Analizler</a>
+                <a class="nav-item active" href="/admin">Admin Panel</a>
+                <a class="nav-item danger" href="/logout">Ã‡Ä±kÄ±ÅŸ</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header glass-card">
+                <div>
+                    <p class="tiny-label">YÃ–NETÄ°M</p>
+                    <h1>Admin Paneli</h1>
+                </div>
+            </header>
+
+            {% if message %}
+                <div class="alert info">{{ message }}</div>
+            {% endif %}
+
+            <section class="content-grid">
+                <div class="glass-card form-card">
+                    <div class="card-head">
+                        <div>
+                            <p class="tiny-label">KULLANICI YÃ–NETÄ°MÄ°</p>
+                            <h2>Yeni KullanÄ±cÄ± OluÅŸtur</h2>
+                        </div>
+                    </div>
+
+                    <form method="post" action="/admin/users" class="modern-form">
+                        <div class="field">
+                            <label>KullanÄ±cÄ± AdÄ±</label>
+                            <input type="text" name="username" required>
+                        </div>
+
+                        <div class="field">
+                            <label>Åifre</label>
+                            <input type="password" name="password" required>
+                        </div>
+
+                        <div class="field">
+                            <label>Rol</label>
+                            <select name="role">
+                                <option value="member">member</option>
+                                <option value="super_admin">super_admin</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary wide">KullanÄ±cÄ± OluÅŸtur</button>
+                    </form>
+                </div>
+
+                <div class="glass-card table-card">
+                    <div class="card-head">
+                        <div>
+                            <p class="tiny-label">KULLANICILAR</p>
+                            <h2>Mevcut Liste</h2>
+                        </div>
+                    </div>
+
+                    <table class="modern-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>KullanÄ±cÄ± AdÄ±</th>
+                                <th>Rol</th>
+                                <th>OluÅŸturulma</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for u in users %}
+                            <tr>
+                                <td>{{ u.id }}</td>
+                                <td>{{ u.username }}</td>
+                                <td><span class="role-badge">{{ u.role }}</span></td>
+                                <td>{{ u.created_at }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

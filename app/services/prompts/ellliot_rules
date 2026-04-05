@@ -1,0 +1,149 @@
+[IMPULS]
+
+Wave 1:
+- Genelde başlangıçta net anlaşılmaz
+- Haber akışı negatiftir
+- Hacim düşük/orta seviyededir
+
+Wave 2:
+- Wave 1’i düzeltir ama başlangıcını geçemez
+- Genelde %50 - %61.8 - %76.4 - %85.4 geri çekilir
+- %76.4 seviyesine iğne atma eğilimi vardır
+- 3 dalgalı yapıdadır
+
+Wave 3:
+- En güçlü dalgadır
+- Momentum ve hacim artar
+- Wave 1 tepesini kırar
+- Eğer Wave 1’in:
+    - 1.618
+    - veya 2.618 seviyesine ulaşırsa → yapı IMPULS
+
+Wave 4:
+- Düzeltme dalgasıdır
+- Genelde:
+    - %23.6
+    - %38.2 (karakteristik)
+    - %50 (kritik)
+    - Destek önceliği: 0.236 > 0.382 > 0.5
+    - Direnç önceliği: 0.5 > 0.618 > 0.764
+- Eğer %50 altında kapanış gelirse:
+    → fiyat Wave 1 tepesine doğru satış yer
+    
+
+Wave 5:
+- Son trend dalgasıdır
+- Eğer yapı IMPULS ise:
+    → minimum hedef = Wave 1 boyu
+    → devam hedefleri:
+        - 1.618
+        - 2.618
+- Güç zayıflayabilir
+- Divergence görülebilir
+
+--------------------------------------------------
+
+[DIAGONAL]
+
+- Wave 3 yeterli uzama yapmazsa oluşur
+- Wave 1 ve Wave 3 dengesi bozulur
+
+Wave 5:
+- Wave 1 + Wave 3 toplamı baz alınır
+- Hedefler:
+    - 0.618
+    - 1.0
+    - 1.618
+
+Davranış:
+- Güç kaybı
+- Zayıf trend
+- İkili tepe oluşabilir
+- Wave 5, Wave 3’e ulaşamayabilir
+
+--------------------------------------------------
+
+[ABC]
+
+Wave A:
+- Düşüş başlar
+- Çoğu kişi düzeltme sanır
+
+Wave B:
+- %50 - %61.8 - %76.4 - %85.4 geri çekilir
+- %85.4 karakteristik seviyedir
+- Bazen:
+    - 1.236 seviyesine çıkar
+    → bu durumda EXPANDING FLAT oluşur
+
+Wave C:
+- "Wave C için öncelikli hedefler 0.618, 1.0 ve 1.236 uzatma bölgeleridir"
+- "0.618 kırılımında 1.236 hedefi ön plana çıkar"
+
+
+--------------------------------------------------
+
+[EXPANDING_FLAT]
+
+- Wave B, Wave A’yı aşar (1.236)
+- Bu durumda:
+
+C dalgası hesaplama:
+- Artık Wave A değil
+- Wave B baz alınır
+
+--------------------------------------------------
+
+[WXY]
+
+Genel:
+- Karmaşık düzeltme yapısıdır
+- Yatay ve kararsız piyasa
+
+Yapı:
+- W - X - Y (7 hareket)
+
+Wave W:
+- İlk düzeltme
+
+Wave X:
+- Bağlantı dalgası
+- Yanıltıcı hareket
+
+Wave Y:
+- İkinci düzeltme
+
+Fibo:
+Wave X:
+- %50 - %61.8 - %76.4 - %85.4
+
+Wave Y:
+- %61.8 - %100 - %123.6
+
+Kural:
+- Wave Y, %161.8 geçmez
+
+--------------------------------------------------
+
+[FIBONACCI_CORE]
+
+Temel Oranlar:
+
+- 0.236
+- 0.382
+- 0.500
+- 0.618
+- 0.764
+- 0.854
+- 1.000
+- 1.236
+- 1.618
+- 2.272
+- 2.414
+- 2.618
+
+
+Kurallar:
+- Oranlar SADECE hesaplama için kullanılır
+- Analiz çıktısında ASLA yazılmaz
+- Sadece fiyat karşılıkları yazılır

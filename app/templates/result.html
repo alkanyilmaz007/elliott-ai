@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elliott AI | SonuÃ§</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="panel-body">
+    <div class="panel-layout">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="logo-circle small">EA</div>
+                <div>
+                    <h2>Elliott AI</h2>
+                    <span>Signal Platform</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a class="nav-item" href="/dashboard">Dashboard</a>
+                <a class="nav-item" href="/history">GeÃ§miÅŸ Analizler</a>
+                {% if user.role == "super_admin" %}
+                    <a class="nav-item" href="/admin">Admin Panel</a>
+                {% endif %}
+                <a class="nav-item danger" href="/logout">Ã‡Ä±kÄ±ÅŸ</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header glass-card">
+                <div>
+                    <p class="tiny-label">SONUÃ‡</p>
+                    <h1>Analiz Ã‡Ä±ktÄ±sÄ±</h1>
+                </div>
+                <div class="header-actions">
+                    <a class="btn btn-secondary" href="/dashboard">Yeni Analiz</a>
+                    <a class="btn btn-primary" href="/history">GeÃ§miÅŸ</a>
+                </div>
+            </header>
+
+            <section class="result-grid">
+                <div class="glass-card hero-result-card">
+                    <p class="tiny-label">SÄ°NYAL</p>
+                    <h2>{{ analysis.symbol or "Belirtilmedi" }}</h2>
+
+                    <div class="result-meta">
+                        <div class="metric-box">
+                            <span>Fiyat</span>
+                            <strong>{{ analysis.current_price }}</strong>
+                        </div>
+                        <div class="metric-box">
+                            <span>Sinyal</span>
+                            <strong class="signal-{{ analysis.signal|lower|replace(' ', '-') }}">{{ analysis.signal }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="analysis-box">
+                        <h3>Analiz Yorumu</h3>
+                        <p>{{ analysis.analysis_text }}</p>
+                    </div>
+                </div>
+
+                <div class="glass-card preview-card">
+                    <p class="tiny-label">GRAFÄ°K</p>
+                    <h2>YÃ¼klenen GÃ¶rsel</h2>
+                    {% if analysis.image_path %}
+                        <img src="{{ analysis.image_path }}" class="preview" alt="YÃ¼klenen grafik">
+                    {% else %}
+                        <div class="empty-preview">Bu analiz iÃ§in gÃ¶rsel yÃ¼klenmedi.</div>
+                    {% endif %}
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

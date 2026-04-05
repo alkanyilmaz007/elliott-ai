@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h2>Hoşgeldin {{ user.username }}</h2>
+
+<a href="/logout">Çıkış</a>
+
+<hr>
+
+<form method="post" action="/analyze">
+    <input type="text" name="instrument" placeholder="Enstrüman (Gold)" required>
+    <input type="number" step="any" name="price" placeholder="Fiyat" required>
+    <button type="submit">Analiz Üret</button>
+</form>
+
+<hr>
+
+{% if analysis %}
+<h3>Analiz:</h3>
+<p>{{ analysis }}</p>
+{% endif %}
+
+{% if signal %}
+<h3>Sinyal:</h3>
+<p>{{ signal }}</p>
+{% endif %}
+
+</body>
+</html>
