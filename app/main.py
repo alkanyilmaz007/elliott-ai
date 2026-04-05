@@ -313,7 +313,7 @@ def render_login_page(error: str = "") -> HTMLResponse:
                         <button type="submit">Giriş Yap</button>
                     </form>
 
-                    <div class="note">Admin giriş: admin / 123456</div>
+                  
                 </div>
             </div>
         </div>
