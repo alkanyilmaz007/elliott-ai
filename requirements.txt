@@ -9,3 +9,4 @@ pillow
 requests
 itsdangerous
 openai
+pymongo==4.5.1
