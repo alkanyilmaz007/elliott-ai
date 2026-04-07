@@ -4,7 +4,7 @@ from bson.objectid import ObjectId
 
 # Render Environment Variable olarak DATABASE_URL eklemelisin
 # Örnek DATABASE_URL:
-# mongodb+srv://kullanici:sifre@cluster0.mongodb.net/elliott_saas_v3?retryWrites=true&w=majority
+# mongodb+srv://kullanici:sifre@cluster0.mongodb.net/elliott_db?retryWrites=true&w=majority
 DATABASE_URL = os.environ.get("DATABASE_URL")
 
 if not DATABASE_URL:
