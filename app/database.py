@@ -2,24 +2,19 @@ import os
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 
-# Render Environment Variable olarak DATABASE_URL eklemelisin
-# Örnek DATABASE_URL:
-# mongodb+srv://kullanici:sifre@cluster0.mongodb.net/elliott_db?retryWrites=true&w=majority
 DATABASE_URL = os.environ.get("DATABASE_URL")
 
 if not DATABASE_URL:
     raise ValueError("DATABASE_URL environment variable is not set!")
 
-# MongoDB client ve DB bağlantısı
-client = MongoClient(DATABASE_URL)
-db = client.get_default_database()  # DATABASE_URL'deki db ismini alır
+# Daha net debug ve timeout için
+client = MongoClient(DATABASE_URL, serverSelectionTimeoutMS=10000)
 
-# Kullanıcı tablosu yerine collection kullanıyoruz
+# DB adı connection string içinden alınır
+db = client.get_default_database()
 users_collection = db["users"]
 
-# Helper fonksiyonlar
 def create_user(username: str, password_hash: str, is_admin=False):
-    """Yeni kullanıcı oluşturur"""
     user = {
         "username": username,
         "password_hash": password_hash,
@@ -29,13 +24,13 @@ def create_user(username: str, password_hash: str, is_admin=False):
     return str(result.inserted_id)
 
 def get_user_by_username(username: str):
-    """Kullanıcıyı username ile bulur"""
     return users_collection.find_one({"username": username})
 
 def delete_user(user_id: str):
-    """Kullanıcıyı siler"""
     return users_collection.delete_one({"_id": ObjectId(user_id)})
 
 def update_user(user_id: str, update_data: dict):
-    """Kullanıcıyı günceller"""
-    return users_collection.update_one({"_id": ObjectId(user_id)}, {"$set": update_data})
+    return users_collection.update_one(
+        {"_id": ObjectId(user_id)},
+        {"$set": update_data}
+    )
