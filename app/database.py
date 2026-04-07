@@ -8,6 +8,8 @@ if not DATABASE_URL:
     raise ValueError("DATABASE_URL environment variable is not set!")
 
 # Daha net debug ve timeout için
+print("DATABASE_URL raw:", repr(DATABASE_URL))
+print("starts with mongodb:", str(DATABASE_URL).startswith("mongodb"))
 client = MongoClient(DATABASE_URL, serverSelectionTimeoutMS=10000)
 
 # DB adı connection string içinden alınır
