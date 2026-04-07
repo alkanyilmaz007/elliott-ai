@@ -11,7 +11,7 @@ from starlette.middleware.sessions import SessionMiddleware
 from pymongo.errors import DuplicateKeyError
 from bson import ObjectId
 
-from .database import users_collection, ping_mongo
+from .database import users_collection
 from .auth import hash_password, verify_password
 
 BASE_DIR = Path(__file__).resolve().parent.parent
