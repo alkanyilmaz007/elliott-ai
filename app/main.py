@@ -121,8 +121,6 @@ def replace_uploaded_file(upload: UploadFile | None, old_path: str | None, prefi
 
 @app.on_event("startup")
 def startup_checks():
-    ping_mongo()
-
     admin = users_collection.find_one({"username": "admin"})
     if admin:
         users_collection.update_one(
