@@ -1,12 +1,7 @@
 import os
 from pymongo import MongoClient
 from bson.objectid import ObjectId
-from urllib.parse import urlparse
 
-parsed = urlparse(DATABASE_URL)
-print("Mongo host:", parsed.hostname)
-print("Mongo db:", parsed.path)
-print("Mongo user:", parsed.username)
 
 DATABASE_URL = os.environ.get("DATABASE_URL")
 
